@@ -4,6 +4,8 @@
 #ifndef CONFIG_RENEWAL_HPP
 #define CONFIG_RENEWAL_HPP
 
+#define DIABRO
+
 //quick option to disable all renewal option, used by ./configure
 //#define PRERE
 #ifndef PRERE

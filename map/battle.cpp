@@ -1678,10 +1678,13 @@ int64 battle_calc_damage(block_list *src,block_list *bl,struct Damage *d,int64 d
 	if( battle_config.ksprotection && mob_ksprotected(src, bl) )
 		return 0;
 
-	if( map_getcell(bl->m, bl->x, bl->y, CELL_CHKMAELSTROM) && skill_id && skill_get_type(skill_id) != BF_MISC
-		&& skill_get_casttype(skill_id) == CAST_GROUND )
+	if (map_getcell(bl->m, bl->x, bl->y, CELL_CHKMAELSTROM) && skill_id && skill_get_type(skill_id) != BF_MISC
+		&& skill_get_casttype(skill_id) == CAST_GROUND)
 		return 0;
-
+#ifdef DIABRO
+	else
+		return damage;
+#endif
 	if (bl->type == BL_PC) {
 		sd=(map_session_data *)bl;
 		//Special no damage states
