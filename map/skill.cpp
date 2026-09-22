@@ -16457,7 +16457,7 @@ uint64 SkillArrowDatabase::parseBodyNode(const ryml::NodeRef& node) {
 }
 
 const std::string AbraDatabase::getDefaultLocation() {
-	return std::string(db_path) + "/abra_db.yml";
+	return std::string(db_path) + "DiabRO/skills/abra_db.yml";
 }
 
 /**
